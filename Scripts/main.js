@@ -3,19 +3,27 @@
 var Main = (function () {
     /*public properties*/
     var pageHashes = {
-        home: "#home"
+        home: "#home",
+        projects: "#projects"
     }
     var pageContainers = {
-        homePageContainer: "homePageContainer"
+        homePageContainer: "homePageContainer",
+        projectsPageContainer: "projectsPageContainer"
     }
     var pageTitles = {
-        home: "Justin Hatin"
+        home: "Justin Hatin",
+        projects: "Projects"
+    }
+    var analyticPageTitles = {
+        home: "Home Page",
+        projects: "Projects Page"
     }
     /*end public properties*/
 
     /*private properties*/
     var _homeLoaded = false;
-    var _containers = ["homePageContainer"];
+    var _projectLoaded = false;
+    var _containers = ["homePageContainer", "projectsPageContainer"];
     var _currentYear;
     /*end private properties*/
 
@@ -32,8 +40,11 @@ var Main = (function () {
             switch (hash) {
                 case Main.pageHashes.home:
                     document.title = Main.pageTitles.home;
-                    //HomePagePresenter.renderPage();
+                    HomePagePresenter.renderPage();
                     break;
+                case Main.pageHashes.projects:
+                    document.title = Main.pageTitles.projects;
+                    ProjectsPagePresenter.renderPage();
                 default:
                     break;
             }
@@ -67,6 +78,21 @@ var Main = (function () {
             window.location.hash = hash;
         }
     }
+    function sendAnalyticsEvent(category, action, label, value) {
+        if (value) {
+            ga('send', 'event', category, action, label, value);
+        }
+        else {
+            ga('send', 'event', category, action, label);
+        }
+    }
+    function sendPageview(page) {
+        ga('set', {
+            page: page,
+            title: page
+        });
+        ga('send', 'pageview', page);
+    }
     /*end public functions*/
 
     /*private functions*/
@@ -81,6 +107,11 @@ var Main = (function () {
     function _loadHTML(callback) {
         if (!_isSiteLoaded()) {
             _loadHomeHTML(function () {
+                if (_isSiteLoaded()) {
+                    callback();
+                }
+            });
+            _loadProjectsHTML(function () {
                 if (_isSiteLoaded()) {
                     callback();
                 }
@@ -102,8 +133,19 @@ var Main = (function () {
             loadedCallback();
         }
     }
+    function _loadProjectsHTML(loadedCallback) {
+        // do html modifications
+        var projectsPage = document.getElementById(Main.pageContainers.projectsPageContainer);
+        if (projectsPage) {
+            var projectPageHTML = projectsPage.innerHTML;
+            projectPageHTML = projectPageHTML.replace("{currentYear}", _currentYear);
+            projectsPage.innerHTML = projectPageHTML;
+            _projectLoaded = true;
+            loadedCallback();
+        }
+    }
     function _isSiteLoaded() {
-        return _homeLoaded;
+        return _homeLoaded && _projectLoaded;
     }
     /*end private functions*/
 
@@ -112,6 +154,9 @@ var Main = (function () {
         pageHashes: pageHashes,
         pageContainers: pageContainers,
         pageTitles: pageTitles,
+        analyticPageTitles: analyticPageTitles,
+        sendAnalyticsEvent: sendAnalyticsEvent,
+        sendPageview: sendPageview,
         showPage: showPage,
         hidePage: hidePage,
         changeHash: changeHash,
