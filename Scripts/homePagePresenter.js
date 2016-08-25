@@ -10,10 +10,17 @@ var HomePagePresenter = (function () {
     /*public functions*/
     function renderPage() {
         // set up any necessary events
-        //Main.addClickEventToElement(document.getElementById("infoSquare"), function () {
-        //    Main.sendAnalyticsEvent("UX", "click", "Info Square");
-        //    Main.changeHash(Main.pageHashes.info);
-        //});
+        Main.addClickEventToElement(document.getElementById("projectLink"), function () {
+            Main.sendAnalyticsEvent("UX", "click", "Projects Page");
+            Main.changeHash(Main.pageHashes.projects);
+        });
+        Main.addClickEventToElement(document.getElementById("homeResumeLink"), function () {
+            Main.sendAnalyticsEvent("UX", "click", "Resume Viewed");
+        });
+        Main.addClickEventToElement(document.getElementById("homeLinkedInOpt"), function () {
+            Main.sendAnalyticsEvent("UX", "click", "LinkedIn Profile Viewed");
+            Main.changeHash(Main.pageHashes.projects);
+        });
 
         // show page
         Main.sendPageview(Main.analyticPageTitles.home);
