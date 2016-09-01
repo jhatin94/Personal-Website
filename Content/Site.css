@@ -20,7 +20,7 @@ body {
 
 a {
     text-decoration: none;
-    font-weight: bold;
+    color: #fff;
 }
 
 .container {
@@ -38,7 +38,7 @@ a {
     text-align: center;
     width: 100%;
     padding: 15px 0;
-    background-color: #1e5610;
+    background-color: #1e5611;
     color: #fff;
 }
 
@@ -49,3 +49,72 @@ a {
 .pullRight {
     float: right;
 }
+
+.heading {
+    background-color: #1e5611;
+    text-align: center;
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.subtitle {
+    font-size: 26px !important;
+}
+
+.navbar {
+    font-size: 18px;
+    text-align: center;
+    background-color: #2C7F19;
+    color: #fff;
+}
+
+.option {
+    padding: 12px 30px;
+    display: inline-block;
+}
+
+    .option:hover {
+        background-color: #1e5611;
+    }
+
+/*Home Page*/
+#summary {
+    margin-top: 5%;
+    background-color: #1e5611;
+    padding: 20px;
+    color: #fff;
+}
+
+/*Projects Page*/
+#projectsContent {
+    margin-top: 5%;
+    background-color: #1e5611;
+    padding: 20px;
+    color: #fff;
+}
+
+.pTitle {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.pDes {
+    padding: 10px 40px;
+    border-bottom: 2px solid #000;
+    margin-bottom: 10px;
+}
+
+.pLink {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.pLast {
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+}
+
+/*Media Queries*/
+
