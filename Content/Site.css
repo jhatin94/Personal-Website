@@ -85,6 +85,18 @@ a {
     background-color: #1e5611;
     padding: 20px;
     color: #fff;
+    overflow: hidden;
+}
+
+#sumPic {
+    display: inline-block;
+    float: left;
+}
+
+.sumText {
+    display: inline-block;
+    width: 65%;
+    padding: 20px 0 0 5%;
 }
 
 /*Projects Page*/
