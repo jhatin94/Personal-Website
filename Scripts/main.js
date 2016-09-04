@@ -128,9 +128,14 @@ var Main = (function () {
             var homePageHTML = homePage.innerHTML;
             _currentYear = new Date().getFullYear();
             homePageHTML = homePageHTML.replace("{currentYear}", _currentYear);
-            homePage.innerHTML = homePageHTML;
-            _homeLoaded = true;
-            loadedCallback();
+            var profilePic = new Image();
+            profilePic.src = "Content/me.jpg";
+            profilePic.onload = function () {
+                homePageHTML = homePageHTML.replace("{profilePic}", profilePic.src);
+                homePage.innerHTML = homePageHTML;
+                _homeLoaded = true;
+                loadedCallback();
+            }
         }
     }
     function _loadProjectsHTML(loadedCallback) {
