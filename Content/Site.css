@@ -18,6 +18,10 @@ body {
     display: block;
 }
 
+.container {
+    position: relative;
+}
+
 a {
     text-decoration: none;
     color: #fff;
@@ -102,6 +106,7 @@ a {
 /*Projects Page*/
 #projectsContent {
     margin-top: 5%;
+    margin-bottom: 5%;
     background-color: #1e5611;
     padding: 20px;
     color: #fff;
