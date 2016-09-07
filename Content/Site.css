@@ -105,8 +105,7 @@ a {
 
 /*Projects Page*/
 #projectsContent {
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin: 5%;
     background-color: #1e5611;
     padding: 20px;
     color: #fff;
@@ -134,4 +133,103 @@ a {
 }
 
 /*Media Queries*/
+@media all and (max-width: 839px) {
+    /*Home Page*/
+    .sumText {
+        padding: 20px 0 0 2%;
+    }
+}
 
+@media all and (max-width: 767px) {
+    /*Home Page*/
+    #summary {
+        width: 80%;
+        margin: 5% auto;
+    }
+
+    #sumPic {
+        display: block;
+        float: none;
+    }
+
+    #profile {
+        margin: auto;
+        display: block;
+        width: 200px;
+        height: 200px;
+    }
+
+    .sumText {
+        padding: 20px 2% 0 0;
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 500px) {
+    /*Home Page*/
+    #profile {
+        width: 180px;
+        height: 180px;
+    }
+
+    /*Projects Page*/
+    .pTitle {
+        font-size: 18px;
+    }
+
+    .pDes {
+        font-size: 14px;
+    }
+}
+
+@media all and (max-width: 445px) {
+    /*Projects Page*/
+    .pTitle {
+        font-size: 16px;
+    }
+
+    .pDes {
+        padding: 10px 30px;
+    }
+}
+
+@media all and (max-width: 437px) {
+    /*Shared*/
+    .option {
+        padding: 12px 25px;
+    }
+
+    .navbar {
+        font-size: 16px;
+    }
+}
+
+@media all and (max-width: 378px) {
+    /*Shared*/
+    .option {
+        padding: 12px 15px;
+    }
+
+    .navbar {
+        font-size: 15px;
+    }
+
+    .heading {
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 24px !important;
+    }
+
+    /*Home Page*/
+    #profile {
+        width: 150px;
+        height: 150px;
+    }
+
+    /*Projects Page*/
+    .pDes {
+        padding: 10px 18px;
+    }
+}
