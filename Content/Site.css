@@ -85,7 +85,7 @@ a {
 
 /*Home Page*/
 #summary {
-    margin-top: 5%;
+    margin: 5%;
     background-color: #1e5611;
     padding: 20px;
     color: #fff;
@@ -133,10 +133,11 @@ a {
 }
 
 /*Media Queries*/
-@media all and (max-width: 839px) {
+@media all and (max-width: 934px) {
     /*Home Page*/
     .sumText {
-        padding: 20px 0 0 2%;
+        padding: 12px 0 0 2%;
+        width: 60%;
     }
 }
 
