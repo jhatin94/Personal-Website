@@ -22,13 +22,26 @@ var ProjectsPagePresenter = (function () {
             Main.changeHash(Main.pageHashes.projects);
         });
 
+        _addAnalyticsEventToAllProjectLinks();
+
         // show page
         Main.sendPageview(Main.analyticPageTitles.projects);
         Main.showPage(Main.pageContainers.projectsPageContainer);
     }
     /*end public functions*/
 
-    /*private properties*/
+    /*private functions*/
+    function _addAnalyticsEventToAllProjectLinks() {
+        var pLinks = document.getElementsByClassName("pLink");
+        var i = 0;
+        var l = pLinks.length;
+        for (i; i < l; i++) {
+            var link = pLinks[i].firstChild;
+            Main.addClickEventToElement(link, function (e) {
+                Main.sendAnalyticsEvent("UX", "click", e.target.href); // send page visited to analytics
+            });
+        }
+    }
     /*end private functions*/
     return {
         renderPage: renderPage

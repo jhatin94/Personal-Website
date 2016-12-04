@@ -131,7 +131,7 @@ var Main = (function () {
             var profilePic = new Image();
             profilePic.src = "Content/me.jpg";
             profilePic.onload = function () {
-                homePageHTML = homePageHTML.replace("{profilePic}", profilePic.src);
+                homePageHTML = homePageHTML.replace("{profilePic}", "<img id='profile' src=" + profilePic.src + " width='240' height='240' alt='Justin Hatin'>");
                 homePage.innerHTML = homePageHTML;
                 _homeLoaded = true;
                 loadedCallback();
