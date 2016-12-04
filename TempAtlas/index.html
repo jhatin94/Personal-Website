@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>TempAtlas</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Hind|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="Site.css" />
+</head>
+<body>
+    <div id="header">TempAtlas</div>
+    <div id="map"></div>
+    <div id="tabContainer">
+        <div id="info" class="section">
+            <div class="sectionTitle">Information</div>
+            <div id="locInfo" class="secInfo"></div>
+        </div>
+        <div id="infoTemplate" class="hide">
+            <div id="weatherInfo">
+                <div id="name"><span class="optLabel">Location: </span>{Name}</div>
+                <div id="group"><span class="optLabel">Conditions: </span>{Group}</div>
+                <div id="high"><span class="optLabel">High: </span>{Hi}</div>
+                <div id="low"><span class="optLabel">Low: </span>{Lo}</div>
+                <div id="humidity"><span class="optLabel">Humidty: </span>{Humidity}</div>
+                <div id="wind"><span class="optLabel">Wind Speed: </span>{Wind}</div>
+                <div id="clouds"><span class="optLabel">Cloudiness: </span>{Clouds}</div>
+            </div>
+        </div>
+        <div id="favorites" class="section">
+            <div class="sectionTitle">Favorites</div>
+            <div id="favList" class="secInfo"></div>
+        </div>
+        <div id="favTemplate" class="hide">
+            <div class="favorite">
+                <span class="optLabel favoriteLabel">{Location}: </span>
+                <div id="delBtn{num}" class="delFav">X</div>
+                <button id="favBtn{num}" class="goToFav" type="button">View Location</button>
+            </div>
+        </div>
+        <div id="controls" class="section">
+            <div class="sectionTitle">Controls</div>
+            <div class="secInfo">
+                Click anywhere in the map to get the current temperature. You can also search for a specific city using the search bar. Use the button to save locations to your favorites. You can change units below.
+                <div id="options">
+                    <span id="units" class="optLabel">Temp Units: </span>
+                    <input id="impRadio" type="radio" name="unit" value="imperial" checked> Imperial
+                    <input id="metRadio" type="radio" name="unit" value="metric"> Metric
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="interactionContainer">
+        <div id="citySearch">
+            <span id="searchLabel" class="optLabel">City Search: </span>
+            <input type="text" id="citySearchBar" />
+        </div>
+        <div id="saveLocation">
+            <button id="addFavorite" type="button">Save Location to Favorites</button>
+        </div>
+        <div id="error">City is not valid or cannot be found</div>
+    </div>
+    <div id="loading" class="hide">
+        <img src="loading.gif" alt="loading" width="200" height="150"/>
+    </div>
+    <script src="main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOFCZhF7pk8tVwoIFEuU9NvNnQoPFAoMk&callback=Main.getStartingLocation"
+            async defer></script>
+</body>
+</html>

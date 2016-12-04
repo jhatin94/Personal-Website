@@ -1,0 +1,165 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Hind', sans-serif;
+    background: #0077BE;
+}
+
+#header {
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    padding: 20px 0;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#map {
+    height: 75%;
+    width: 60%;
+    float: left;
+    padding-left: 5%;
+}
+
+#tabContainer {
+    float: right;
+    margin-right: 5%;
+    height: 75%;
+    width: 25%;
+}
+
+.sectionTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.section {
+    border: 1px solid #000;
+    border-radius: 10px;
+    background: #fff;
+    padding: 10px;
+    margin: 10px 0 10px 0;
+}
+
+.secInfo {
+    padding: 10px 8px;
+}
+
+#favorites {
+    /*display: none;*/
+}
+
+#info {
+}
+
+#controls {
+}
+
+#options {
+    padding: 10px 0;
+}
+
+.optLabel {
+    font-weight: bold;
+}
+
+#interactionContainer {
+    float: left;
+    color: #fff;
+    padding: 25px 0 0 5%;
+}
+
+#error {
+    color: #ff9494;
+    display: none;
+}
+
+#citySearchBar, .goToFav {
+    margin-left: 5px;
+}
+
+#citySearch, #saveLocation {
+    display: inline-block;
+    font-size: 20px;
+}
+
+#saveLocation {
+    margin-left: 40px;
+}
+
+#addFavorite {
+    padding: 4px 7px;
+}
+
+.hide {
+    display: none;
+}
+
+.dim {
+    opacity: 0.6;
+}
+
+.favorite {
+    padding-bottom: 10px;
+}
+
+.goToFav, .delFav {
+    float: right;
+}
+
+.delFav {
+    padding: 0 5px 0 5px;
+    margin-left: 5px;
+}
+
+    .delFav:hover {
+        background: #a9a9a9;
+        cursor: pointer;
+    }
+
+#loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*Media Queries*/
+@media all and (max-width: 1472px) {
+    /*Fav Tab*/
+    .favoriteLabel, .goToFav {
+        font-size: 12px;
+    }
+}
+
+@media all and (max-width: 1250px) {
+    .searchLabel {
+        font-size: 14px;
+    }
+
+    .citySearchBar {
+        height: 14px;
+    }
+
+    #saveLocation {
+        margin-left: 15px;
+        width: 25%;
+    }
+
+    #map {
+        width: 50%;
+    }
+
+    #tabContainer {
+        width: 35%;
+    }
+
+    .favoriteLabel {
+        max-width: 100px;
+        display: inline-block;
+    }
+}
