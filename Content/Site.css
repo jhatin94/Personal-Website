@@ -156,8 +156,10 @@ a {
     #profile {
         margin: auto;
         display: block;
-        width: 200px;
-        height: 200px;
+        max-width: 240px;
+        max-height: 240px;
+        height: auto;
+        width: auto;
     }
 
     .sumText {
@@ -169,8 +171,10 @@ a {
 @media all and (max-width: 500px) {
     /*Home Page*/
     #profile {
-        width: 180px;
-        height: 180px;
+        max-width: 180px;
+        max-height: 180px;
+        height: auto;
+        width: auto;
     }
 
     /*Projects Page*/
@@ -225,8 +229,10 @@ a {
 
     /*Home Page*/
     #profile {
-        width: 150px;
-        height: 150px;
+        max-width: 150px;
+        max-height: 150px;
+        height: auto;
+        width: auto;
     }
 
     /*Projects Page*/
