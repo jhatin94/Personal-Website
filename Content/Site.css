@@ -97,6 +97,15 @@ a {
     float: left;
 }
 
+#profile {
+    margin: auto;      
+    display: block;     
+    max-width: 240px;      
+    max-height: 240px;       
+    height: auto;      
+    width: auto;
+}
+
 .sumText {
     display: inline-block;
     width: 65%;
@@ -153,7 +162,7 @@ a {
         float: none;
     }
 
-    img#profile {
+    #profile {
         margin: auto;
         display: block;
         max-width: 240px;
