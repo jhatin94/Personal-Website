@@ -129,7 +129,7 @@ var Main = (function () {
             _currentYear = new Date().getFullYear();
             homePageHTML = homePageHTML.replace("{currentYear}", _currentYear);
             var profilePic = new Image();
-            profilePic.src = "Content/me.jpg";
+            profilePic.src = "Content/WTSpringPortraits0097.jpg";
             profilePic.onload = function () {
                 homePageHTML = homePageHTML.replace("{profilePic}", "<img id='profile' src=" + profilePic.src + " width='240' height='240' alt='Justin Hatin'>");
                 homePage.innerHTML = homePageHTML;
