@@ -273,7 +273,7 @@ var Main = (function () {
         _showHideProcessing(); // display loading
         var xhr = new XMLHttpRequest();
 
-        var requestLink = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&units=" + _units + "&APPID=f286e2990fed460a17964af2d80b3c60";
+        var requestLink = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&units=" + _units + "&APPID=YOUR_APP_ID_HERE";
 
         xhr.onload = function () {
             var response = xhr.responseText;
@@ -311,7 +311,7 @@ var Main = (function () {
         _showHideProcessing(); // display loading
         var xhr = new XMLHttpRequest();
 
-        var requestLink = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=" + _units + "&APPID=f286e2990fed460a17964af2d80b3c60";
+        var requestLink = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=" + _units + "&APPID=YOUR_APP_ID_HERE";
 
         xhr.onload = function () {
             var response = xhr.responseText;
